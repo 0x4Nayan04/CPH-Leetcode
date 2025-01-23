@@ -1,0 +1,81 @@
+{
+  "name": "cph-leetcode-tinkering-lab",
+  "displayName": "CPH: LeetCode - Local Testing Environment",
+  "description": "A powerful VS Code extension for local LeetCode problem testing. Features offline execution, custom test cases, and real-time debugging capabilities.",
+  "publisher": "Nayan_Swarnkar",
+  "icon": "media/logo.png",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other",
+    "Programming Languages",
+    "Testing"
+  ],
+  "keywords": [
+    "leetcode",
+    "competitive programming",
+    "testing",
+    "local development",
+    "debugging"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "leetcode-testcases",
+          "title": "CPH: LeetCode",
+          "icon": "media/logo.svg"
+        }
+      ]
+    },
+    "views": {
+      "leetcode-testcases": [
+        {
+          "type": "webview",
+          "id": "leetcode-testcases.webview",
+          "name": "CPH Test Cases"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "leetcode-testcases.fetch",
+        "title": "CPH: Fetch Test Cases"
+      },
+      {
+        "command": "leetcode-testcases.run",
+        "title": "CPH: Run Test Cases"
+      }
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/0x4Nayan04/CPH-Leetcode"
+  },
+  "bugs": {
+    "url": "https://github.com/0x4Nayan04/CPH-Leetcode/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.96.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.16.0"
+  },
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cheerio": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}
